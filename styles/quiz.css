@@ -1,0 +1,143 @@
+main {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question {
+    font-size: var(--large);
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 40ch;
+}
+
+.answers {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.answer:nth-child(4n + 1) {
+    padding: 10px;
+    border: 2px dashed var(--primary);
+    border-radius: 5px;
+}
+
+.answer.selected:nth-child(4n + 1) {
+    position: relative;
+    border: 2px solid var(--primary);
+}
+
+.answer.selected:nth-child(4n + 1)::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary);
+    opacity: 0.6; /* Dark overlay */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+.answer:nth-child(4n + 2) {
+    padding: 10px;
+    border: 2px dashed var(--accent);
+    border-radius: 5px;
+}
+
+.answer.selected:nth-child(4n + 2) {
+    position: relative;
+    border: 2px solid var(--accent);
+}
+
+.answer.selected:nth-child(4n + 2)::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    opacity: 0.6; /* Dark overlay */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+.answer:nth-child(4n + 3) {
+    padding: 10px;
+    border: 2px dashed var(--secondary);
+    border-radius: 5px;
+}
+
+.answer.selected:nth-child(4n + 3) {
+    position: relative;
+    border: 2px solid var(--secondary);
+}
+
+.answer.selected:nth-child(4n + 3)::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary);
+    opacity: 0.6; /* Dark overlay */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+.answer:nth-child(4n + 4) {
+    padding: 10px;
+    border: 2px dashed #D1C4E9;
+    border-radius: 5px;
+}
+
+.answer.selected:nth-child(4n + 4) {
+    position: relative;
+    border: 2px solid #D1C4E9;
+}
+
+.answer.selected:nth-child(4n + 4)::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #D1C4E9;
+    opacity: 0.6; /* Dark overlay */
+    z-index: -1; /* Keeps it behind the content */
+}
+
+.prev, .next {
+    position: fixed;
+    bottom: 10px;
+    padding: 10px 20px;
+    background: var(--background);
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+    border: 2px dashed var(--primary);
+}
+
+.next {
+    right: 10px;
+    border: 2px dashed var(--secondary);
+}
+
+.hidden {
+    display: none;
+}
+
+.finalMessage {
+    font-size: var(--large);
+}
